@@ -30,9 +30,9 @@
                 </mat-form-field>
             </div>
             <div class="segment">
-                <mat-form-field appearance="fill">
+                <mat-form-field class="date-picker" appearance="fill">
                     <mat-label>Deadline date</mat-label>
-                    <input ngModel required matInput [matDatepicker]="picker" [(ngModel)]="date" name="date">
+                    <input [min]="minDate" ngModel required matInput [matDatepicker]="picker" [(ngModel)]="date" name="date">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>

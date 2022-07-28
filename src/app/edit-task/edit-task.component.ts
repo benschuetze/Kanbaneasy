@@ -24,7 +24,9 @@ export class EditTaskComponent implements OnInit {
     'High'
   ];
 
-  date = new Date(this.data['task']['date']['seconds']);
+  minDate = new Date();
+
+  date = this.data['task']['date']['seconds'];
 
   constructor(public dialogRef:MatDialogRef<EditTaskComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any) { }

@@ -16,6 +16,8 @@ export class AddTaskComponent implements OnInit {
 
   task:Task;
 
+  minDate = new Date();
+
 
   title = '';
   category = '';

@@ -26,7 +26,7 @@ body {
         height: 100px;
         width: 150px;
         resize: none;
-      }
+    }
 
     button {
         width: 80px;
@@ -64,7 +64,7 @@ body {
 
 .explanation {
     color: white;
-    position:absolute;
+    position: absolute;
     width: 300px;
     margin: 0 auto;
     top: 85px;
@@ -72,9 +72,12 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-body::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+body::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
 }
+
+
 
 @media(max-width: 510px) {
     .form {
@@ -84,9 +87,19 @@ body::-webkit-scrollbar {
         height: 100%;
     }
 
+
+
+    mat-calendar {
+        align-self: center !important;
+        margin: 0 auto !important;
+    }
+
     .explanation {
         display: none;
     }
+
+
+
     mat-card {
         width: 100% !important;
         height: 100% !important;
