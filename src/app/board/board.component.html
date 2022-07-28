@@ -1,0 +1,54 @@
+<div class="root">
+    <div class="board">
+
+        <div class="board-wrapper">
+            <div class="board-columns" cdkDropListGroup>
+                <div class="board-column">
+
+                    <div class="column-title" id="to-do">To Do</div>
+                    <div class="tasks-container" cdkDropList #todoList="cdkDropList" [cdkDropListData]="toDo"
+                        (cdkDropListDropped)="drop($event, 'to-do')">
+                        <div (mousedown)="selectTask(t)" class="task" *ngFor="let t of toDo" cdkDrag>
+                            <p class="task-title">{{t['title']}}</p>
+                            <p>{{ t['description'] }}</p>
+                            <img class="icon" (click)="editTask()" src="../../assets/img/edit.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title" id="in-progress">In Progress</div>
+                    <div class="tasks-container" cdkDropList #todoList="cdkDropList" [cdkDropListData]="inProgress"
+                        (cdkDropListDropped)="drop($event, 'in-progress')">
+                        <div (mousedown)="selectTask(t)" class="task" *ngFor="let t of inProgress" cdkDrag>
+                            <p class="task-title">{{t['title']}}</p>
+                            <p>{{ t['description'] }}</p>
+                            <img class="icon" (click)="editTask()" src="../../assets/img/edit.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title" id="testing">Testing</div>
+                    <div class="tasks-container" cdkDropList #todoList="cdkDropList" [cdkDropListData]="testing"
+                        (cdkDropListDropped)="drop($event, 'testing')">
+                        <div (mousedown)="selectTask(t)" class="task" *ngFor="let t of testing" cdkDrag>
+                            <p class="task-title">{{t['title']}}</p>
+                            <p>{{ t['description'] }}</p>
+                            <img class="icon" (click)="editTask()" src="../../assets/img/edit.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title" id="done">Done</div>
+                    <div class="tasks-container" cdkDropList #todoList="cdkDropList" [cdkDropListData]="done"
+                        (cdkDropListDropped)="drop($event, 'done')">
+                        <div (mousedown)="selectTask(t)" class="task" *ngFor="let t of done" cdkDrag>
+                            <p class="task-title">{{t['title']}}</p>
+                            <p>{{ t['description'] }}</p>
+                            <img class="icon" (click)="editTask()" src="../../assets/img/edit.svg" alt="">
+                            <img (click)="removeFromBoard()" *ngIf="t['boardState'] == 'done'" style="height: 24px;" class="icon2" src="../../assets/img/done.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "join-7cee9": {
+      "hosting": {
+        "JOinANgularClone": [
+          "join-7cee9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "join-7cee9"
+  }
+}
