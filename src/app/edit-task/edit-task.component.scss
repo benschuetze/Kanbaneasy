@@ -24,6 +24,8 @@ button {
 form {
     display: flex;
     box-shadow: none;
+    flex-wrap: wrap;
+    justify-content: center;
 
 
     .segment {
@@ -43,5 +45,24 @@ form {
             right: 0px;
             bottom: 16px;
         }
+    }
+}
+
+@media screen and (max-width: 666px) {
+    form {
+        padding-top: 100px;
+        padding-bottom: 64px;
+    }
+
+    .cancel {
+        position: absolute;
+        right: 80px;
+        bottom: -32px !important;
+    }
+
+    .add {
+        position: absolute;
+        right: 0px;
+        bottom: -32px !important;
     }
 }

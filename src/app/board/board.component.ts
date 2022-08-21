@@ -70,6 +70,7 @@ export class BoardComponent implements OnInit {
   //edit Task and save Changes in Firestore Database
 
   editTask() {
+    event.stopPropagation();
     const dialogRef = this.dialog.open(EditTaskComponent, {
       data: {
         task: this.selectedTask
@@ -90,6 +91,7 @@ export class BoardComponent implements OnInit {
   }
 
   moveTask() {
+    event.stopPropagation();
     const dialogRef = this.dialog.open(MoveTaskModalComponent, {
       data: {      
         task: this.selectedTask
@@ -110,6 +112,7 @@ export class BoardComponent implements OnInit {
   }
 
   showTask() {
+    event.stopPropagation();
     const dialogRef = this.dialog.open(TaskViewerComponent, {
       data: {
         task: this.selectedTask
@@ -130,12 +133,10 @@ export class BoardComponent implements OnInit {
       .update(editedTask);
   }
 
-  showSnackBar() {
-    
-  }
+
 
   removeFromBoard() {
-    console.log('task id is',this.selectedTask['id']);
+    event.stopPropagation();
     this.firestore
     .collection('tasks')
     .doc(this.selectedTask['id'])
@@ -146,7 +147,6 @@ export class BoardComponent implements OnInit {
    .catch((error) => {
       console.error('Error removing document: ', error);
    });;
-   this.showSnackBar();
 
 
   }
