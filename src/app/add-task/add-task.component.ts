@@ -3,7 +3,6 @@ import { Task } from 'src/models/task.class';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import AOS from "aos";
 import { toUnicode } from 'punycode';
 
 
@@ -29,8 +28,6 @@ export class AddTaskComponent implements OnInit {
   constructor(private router: Router, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-
-    AOS.init();
 
     this.task =new Task();
     this.firestore

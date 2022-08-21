@@ -3,7 +3,8 @@
     flex-direction: column;
     height: 100%;
     background-color: #2F3061;
-    width: 100vw;
+    width: 100%;
+    overflow-x:scroll !important;
 }
 
 .board {
@@ -13,7 +14,9 @@
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
+    flex-wrap: wrap;
     margin: 0 auto;
+    overflow-x:scroll !important;
 
     min-width: 0;
     min-height: 0;
@@ -36,10 +39,11 @@
     .board-wrapper {
         display: flex;
         flex-grow: 1;
-        overflow-x: auto;
-        height: 100%;
+        overflow-x:scroll !important;
+        min-height: 100%;
         width: 100%;
         margin: 0 auto;
+        flex-wrap: wrap;
 
         .board-columns {
             display: flex;
@@ -47,6 +51,7 @@
             height: 100%;
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
             .board-column {
                 height: 500px;
                 display: flex;
@@ -58,15 +63,14 @@
                 scrollbar-width: none;  /* Firefox */
 
                 width: 250px;
+                min-width: 200px !important;
                 max-width: 250px;
                 margin: 50px;
                 padding: 25px;
                 box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
                 border-radius: 4px;
 
-                &:not(:first-child) {
-                    margin-left: 0;
-                }
+
 
                 .column-title {
                     font-size: 20px;
@@ -143,7 +147,8 @@
   .icon2 {
     position: absolute;
     bottom: 4px;
-    right: 4px,
+    right: 4px;
+    height: 28px;
   }
 
   

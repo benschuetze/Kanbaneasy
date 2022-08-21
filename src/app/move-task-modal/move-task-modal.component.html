@@ -1,0 +1,14 @@
+<h2>Where do you want to move the task?</h2>
+    <mat-form-field appearance="fill">
+        
+        <mat-label>Select a column</mat-label>
+        <mat-select [(ngModel)]="data['task']['boardState']" disableRipple>
+            <mat-option value="to-do">To Do</mat-option>
+            <mat-option value="in-progress">In Progress</mat-option>
+            <mat-option value="testing">Testing</mat-option>
+            <mat-option value="done">Done</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="cancel" mat-button [mat-dialog-close]="'cancel'" >Cancel</button>
+            <button type="submit" class="add" mat-button color="primary" [mat-dialog-close]="data['task']">Save</button>

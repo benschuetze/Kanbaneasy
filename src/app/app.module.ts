@@ -32,6 +32,7 @@ import { BoardComponent } from './board/board.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { DoneModalComponent } from './done-modal/done-modal.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { MoveTaskModalComponent } from './move-task-modal/move-task-modal.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
     BoardComponent,
     EditTaskComponent,
     DoneModalComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    MoveTaskModalComponent
   ],
   imports: [
     MatToolbarModule,

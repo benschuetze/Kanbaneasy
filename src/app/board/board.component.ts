@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTaskComponent } from '../edit-task/edit-task.component';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
-import { QuerySnapshot } from 'firebase/firestore';
+import { MoveTaskModalComponent } from '../move-task-modal/move-task-modal.component';
 
 @Component({
   selector: 'app-board',
@@ -45,6 +44,7 @@ export class BoardComponent implements OnInit {
     console.log(this.selectedTask);
   }
 
+
   /**
    * 
    * @param event : Event Data;
@@ -80,11 +80,32 @@ export class BoardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((editedTask: any) => { // editedTask is change from dialog
       let taskIndex = this.tasks.indexOf(this.selectedTask);
-      if (editedTask) { // hier noch name
+      if (editedTask) { 
         if (editedTask == 'cancel') {
           return
         } else {
           this.saveEditedTask(editedTask, taskIndex);
+        }
+
+      }
+    });
+  }
+
+  moveTask() {
+    const dialogRef = this.dialog.open(MoveTaskModalComponent, {
+      data: {      
+        task: this.selectedTask
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((movedTask: any) => { // editedTask is change from dialog
+      let taskIndex = this.tasks.indexOf(this.selectedTask);
+      if (movedTask) { 
+        if (movedTask == 'cancel') {
+          return
+        } else {
+          console.log(movedTask)
+           this.saveEditedTask(movedTask, taskIndex);
         }
 
       }

@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+mat-dialog-container {
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+mat-form-field {
+    width: 100%;
+    margin: 0 auto !important;
+    align-self: center;
+}
+
+.mat-form-field-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 250px;
+}

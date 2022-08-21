@@ -87,6 +87,16 @@ body::-webkit-scrollbar {
         height: 100%;
     }
 
+    .cancel {
+        right: 80px !important;
+        bottom: -32px !important;
+    }
+
+    .add {
+        right: 0px !important;
+        bottom: -32px !important;
+    }
+
 
 
     mat-calendar {

@@ -7,14 +7,14 @@
             </div>
             <div *ngIf="!route('board')" (click)="goToBoard()" class="go-to-board"
                 style="cursor: pointer;height: 100%;display: flex;align-items: center;">
-                <p style="transform: translateY(4px);display: flex; align-items: center">Go to board...</p>
+                <p class="action-text" style="transform: translateY(4px);display: flex; align-items: center">Go to board...</p>
                 <img class="icon" src="../../assets/img/start.svg" alt="">
 
             </div>
 
             <div *ngIf="route('board')" (click)="goToAddTask()" class="go-to-board"
                 style="cursor: pointer;height: 100%;display: flex;align-items: center;">
-                <p style="transform: translateY(4px);display: flex; align-items: center">Add a task...</p>
+                <p class="action-text" style="transform: translateY(4px);display: flex; align-items: center">Add a task...</p>
                 <img class="icon" src="../../assets/img/plus.svg" alt="">
 
             </div>

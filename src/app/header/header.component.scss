@@ -27,3 +27,14 @@ span {
         background-color: #b8b8b8;
     }
 }
+
+
+
+@media(max-width: 350px) {
+
+        .action-text {
+            display: none !important;
+        }
+
+
+}
