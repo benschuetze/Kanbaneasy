@@ -6,6 +6,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { MatDialog } from '@angular/material/dialog';
 import { EditTaskComponent } from '../edit-task/edit-task.component';
 import { MoveTaskModalComponent } from '../move-task-modal/move-task-modal.component';
+import { TaskViewerComponent } from '../task-viewer/task-viewer.component';
 
 @Component({
   selector: 'app-board',
@@ -34,14 +35,11 @@ export class BoardComponent implements OnInit {
       this.inProgress = tasks.filter(t => t['boardState'] == 'in-progress');
       this.testing = tasks.filter(t => t['boardState'] == 'testing');
       this.done = tasks.filter(t => t['boardState'] == 'done');
-      console.log('Stored Tasks:', this.tasks)
-      console.log
     })
   }
 
   selectTask(task: object) {
     this.selectedTask = task;
-    console.log(this.selectedTask);
   }
 
 
@@ -104,11 +102,22 @@ export class BoardComponent implements OnInit {
         if (movedTask == 'cancel') {
           return
         } else {
-          console.log(movedTask)
            this.saveEditedTask(movedTask, taskIndex);
         }
 
       }
+    });
+  }
+
+  showTask() {
+    const dialogRef = this.dialog.open(TaskViewerComponent, {
+      data: {
+        task: this.selectedTask
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(() => { 
+      return
     });
   }
 

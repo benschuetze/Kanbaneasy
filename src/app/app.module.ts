@@ -19,7 +19,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -33,6 +32,7 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
 import { DoneModalComponent } from './done-modal/done-modal.component';
 import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { MoveTaskModalComponent } from './move-task-modal/move-task-modal.component';
+import { TaskViewerComponent } from './task-viewer/task-viewer.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { MoveTaskModalComponent } from './move-task-modal/move-task-modal.compon
     EditTaskComponent,
     DoneModalComponent,
     SnackBarComponent,
-    MoveTaskModalComponent
+    MoveTaskModalComponent,
+    TaskViewerComponent
   ],
   imports: [
     MatToolbarModule,
