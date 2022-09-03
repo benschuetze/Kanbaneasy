@@ -1,14 +1,30 @@
-
 /* You can add global styles to this file, and also import other style files */
 @import 'main-styles.scss';
 @import '../node_modules/bulma/bulma.sass';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
-html, body { height:100%; overflow: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden !important;
+}
+
 textarea {
-  
-    resize: none;
-  }
+
+  resize: none;
+}

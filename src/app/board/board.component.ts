@@ -146,7 +146,7 @@ export class BoardComponent implements OnInit {
     })
    .catch((error) => {
       console.error('Error removing document: ', error);
-   });;
+   });
 
 
   }
